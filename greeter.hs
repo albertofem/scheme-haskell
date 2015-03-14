@@ -4,4 +4,11 @@ import System.Environment
 main :: IO ()
 main = do
 	args <- getArgs
-	putStrLn ("Hello, " ++ args !! 0)
+	first <- readParameter
+	second <- readParameter
+	putStrLn ("Hello, " ++ first ++ " " ++ second)
+
+readParameter :: IO String
+readParameter = do
+	putStrLn "Enter parameter: "
+	getLine
